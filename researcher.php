@@ -1,3 +1,6 @@
+<?php
+require_once "index1.php";
+?>
 <DOCTYPE html>
     <html>
         <head>
@@ -7,13 +10,16 @@
         </head>
         <body>
             <a href="index.php">PSAPP</a> 
-            <a href="#">researcher1</a>
+            <a href="researcher.php">researcher1</a>
             <a href="index.php">log out</a>
-            <script language="JavaScript" src="http://feedroll.com/rssviewer/feed2js.php?src=https%3A%2F%2Fwww.news-medical.net%2Ftag%2Ffeed%2FParkinsons-Disease.aspx&chan=y&desc=1&utf=y"  charset="UTF-8" type="text/javascript"></script>
 
-            <noscript>
-                <a href="http://feedroll.com/rssviewer/feed2js.php?src=https%3A%2F%2Fwww.news-medical.net%2Ftag%2Ffeed%2FParkinsons-Disease.aspx&chan=y&desc=1&utf=y&html=y">View RSS feed</a>
-            </noscript>
         </body>
     </html>
 </DOCTYPE>
+<div>
+    <?php 
+    $mysql_user = "SELECT `user`.`email` FROM `user` WHERE Role_IDrole = 3";
+    $aUsers = $mysqli -> query($mysql_user);
+    authUsers($aUsers);//sends the quiry result to the html
+    ?>
+</div>

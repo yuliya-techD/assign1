@@ -1,5 +1,6 @@
 <?php 
-include 'index1.php';
+session_start();
+require_once "index1.php";
 ?>
 <DOCTYPE html>
     <html>
@@ -15,24 +16,72 @@ include 'index1.php';
             <div>
                 <?php
 
-                //variables for quiries
-                $mysqlrole = "SELECT * FROM `role`";
-                $mysqluser = "SELECT * FROM `user`";
-                $mysqltest_session ="SELECT DataURL FROM `test_session`";
-                // Perform query
-                if ($result = $mysqli -> query($mysqltest_session)) {
-                    echo "<br><h1>All users in PSAPP are:</h1> " ;
+                //variables for quiries 
+                $mysqltest_session ="SELECT dateTime,DataURL FROM `test` INNER JOIN `test_session` ON test.testID = test_session.Test_IDtest WHERE test.Therapy_IDtherapy = 1";
+
+                $mysqltest_session2 ="SELECT dateTime,DataURL FROM `test` INNER JOIN `test_session` ON test.testID = test_session.Test_IDtest WHERE test.Therapy_IDtherapy = 2";
+                 // Perform query
+                $patient1 =$mysqli->query($mysqltest_session);
+                $patient2 =$mysqli->query($mysqltest_session2);
+                if ($result = $patient1 ) {
+                    echo "<br><h1>Download test results for patient1</h1>";
                     while ($row = $result -> fetch_row()) {
-                        printf ("<a href = \"%s\">%s</a><br>", $row[0], $row[0]);
+                        printf ("<p>%s <a href = \"%s\">%s</a></p>",  $row[0],$row[1], $row[1]);
+                    }
+                    // Free result set
+                    $result -> free_result();
+                }
+                if ($result = $patient2 ) {
+                    echo "<br><h1>Download test results for patien2</h1>";
+                    while ($row = $result -> fetch_row()) {
+                        printf ("<p>%s <a href = \"%s\">%s</a></p>",  $row[0],$row[1], $row[1]);
                     }
                     // Free result set
                     $result -> free_result();
                 }
 
+                $mysql_user = "SELECT `user`.`email` FROM `user` WHERE Role_IDrole = 2";
+                $aUsers = $mysqli -> query($mysql_user);
+                authUsers($aUsers);
+                
+                
                 //end
                 mysqli_close($mysqli);
                 ?>
-            </div>
-        </body>
-    </html>
-</DOCTYPE>
+            </div> 
+                     </body>
+                </html>
+            </DOCTYPE>
+
+        <?php
+
+        require_once "configGoogle.php";
+
+        $code = isset($_GET['code']) ? $_GET['code'] : NULL;
+
+
+        if(isset($code)) {
+            echo "<pre>";
+            echo "code is : ".  $code ;
+            try {
+
+                $token = $client->fetchAccessTokenWithAuthCode($code);
+                if(!isset($token['error']))
+                {
+                    $client->setAccessToken($token['access_token']);
+                    $_SESSION['access_token'] = $token['access_token'];
+                    $google_service = new Google_Service_Oauth2($google_client);
+                    $data = $google_service->userinfo->get();
+                }
+
+                //$client->setAccessToken($code);
+                //$user_info = $client->verifyIdToken();
+            }catch (Exception $e){
+                echo "<pre>";
+                echo $e->getMessage();
+                echo "<br>";
+            }
+
+
+        }
+        ?>

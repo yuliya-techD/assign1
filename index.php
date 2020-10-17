@@ -1,6 +1,7 @@
-<?php 
-include 'index1.php';
+<?php
+require_once "configGoogle.php";
 ?>
+
 <!DOCTYPE html>
 <html> 
     <head>
@@ -13,39 +14,42 @@ include 'index1.php';
         <div class="container">
             <h2 style="text-align:center"> Welcome to PSAPP</h2>
             <h4 style="text-align:center"> the newest Parkinson's Desease social application for patients, phycians and researchers </h4>
-            
+
             <div class="panel-container">
-                
+
                 <div id="patient" class="panels">  
                     <div class="overlay"></div>
-                    <div class = "button">
-                    <a href="patient.php" class="twitter btn">
-                        <i class="fa fa-twitter fa-fw">
-                        </i> Login with Twitter
-                    </a>
+                    <div class = "button" >
+                        <a href="patient.php" class="twitter btn" style="text-align:center;
+                                                                         background-color: black;">
+                            <i class="fa fa-twitter fa-fw">
+                            </i> Login as a patient<br> with Twitter</a>
+
                     </div>
                 </div>
                 <div id="physician" class="panels"> 
                     <div class="overlay"></div>
                     <div class = "button">
-                    <a href="physician.php" class="google btn">
-                    <i class="fa fa-google fa-fw">
-                    </i> Login with Google+
-                    </a>
-                    </div>
-                    
+                        <a href="<?php echo $authUrl?>" class="google btn" style="text-align:center;
+                                                                                  background-color: black;"><i class="fa fa-google fa-fw">
+                            </i> 
+                            Login as physician <br> with Gmail
+                        </a>
+                    </div>                    
+
                 </div>
                 <div id="researcher" class="panels">
                     <div class="overlay"></div>
                     <div class = "button">
-                    <a href="researcher.php" class="linkedin btn">
-                        <i class="fa fa-linkedin fa-fw">
-                        </i> Login with LinkedIn
-                    </a>
+                        <a href="researcher.php" class="linkedin btn" style="text-align:center;
+                                                                             background-color: black;">
+                            <i class="fa fa-linkedin fa-fw">
+                            </i> Login as researcher <br> with LinkedIn
+                        </a>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
 
         </div>
