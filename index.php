@@ -10,6 +10,7 @@ require "configGithub.php";
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="main.css">
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     </head>
     <body>
 
@@ -23,8 +24,9 @@ require "configGithub.php";
                     <div class="overlay"></div>
                     <div class = "button" >
                         <a href="dLogin.php" class="twitter btn" style="text-align:center;
-                                                                        background-color: black;">
-                            <i class="fa fa-discord fa-fw"></i>
+                                                                        background-color:">
+                            <span class="iconify" data-icon="simple-icons:discord" data-inline="false"></span>
+                            
                             Login as a patient<br> with Discord</a>
                     </div>
                 </div>
@@ -33,7 +35,7 @@ require "configGithub.php";
                 <div id="physician" class="panels"> 
                     <div class="overlay"></div>
                     <div class = "button">
-                        <a href="<?php echo $authUrl?>" class="google btn" style="text-align:center;
+                    <a href="<?php echo $authUrl?>" class="google btn" style="text-align:center;
                                                                                   background-color: black;">
                             <i class="fa fa-google fa-fw">
                             </i> 
