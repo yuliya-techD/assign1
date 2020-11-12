@@ -9,10 +9,14 @@ a{
     text-decoration: none;
 }
 .nav{
+    width:70%;
+    margin-bottom:50px; 
     float:right;
-    width:500px;
     text-align: right;
-    border:1px solid black;
+}
+.nav a{
+    margin:0px 10px;
+    color:darkgray;
 }
 /* style the container */
 .container {

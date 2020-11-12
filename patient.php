@@ -13,16 +13,22 @@ require "configDiscord.php";
             <link rel="stylesheet" href="tabs.css">
         </head>
         <body>
-            <a href="index.php">PSAPP</a> 
-            <a href="#"> patient 1 </a>
-            <a href="index.php">log out</a><br>
 
+            <div>
+                <div >
+                    <a href="index.php" style = "float : left;">PSAPP</a> 
+                </div>
+                <div class="nav">
+                    <a href="patient.php"> Patient 1 </a>
+                    <a href="index.php">log out</a><br>
+                </div>
+            </div>
             <div>
 
                 <div class = "profile-menu">
                     <ul>
-                        <li class = "tablinks" onclick="openTab(event, 'video')" >videos</li>
-                        <li class = "tablinks"onclick="openTab(event, 'profile')" >profile</li>
+                        <li class = "tablinks" onclick="openTab(event, 'video')" >Videos</li>
+                        <li class = "tablinks"onclick="openTab(event, 'profile')" >Profile</li>
                     </ul>
                 </div>
 
@@ -34,8 +40,7 @@ require "configDiscord.php";
                     $basic_request_url = "https://www.googleapis.com/youtube/v3/";
                     $pd_channel_id = "UC9QTes9SMZKbSzDS-nvhr3g";
                     $maxResult = 2;
-                    $API_request_url = $basic_request_url . "search?order=date&part=snippet&channelId=".$pd_channel_id."&maxResults=".$maxResult ."&key=".$client_key;
-                    echo $API_request_url; 
+                    $API_request_url = $basic_request_url . "search?order=date&part=snippet&channelId=".$pd_channel_id."&maxResults=".$maxResult ."&key=".$client_key; 
 
                     $pd_videos = json_decode(file_get_contents($API_request_url));
                     $pd_video_title = $pd_videos->items[0]->snippet->title;
@@ -50,7 +55,12 @@ require "configDiscord.php";
                     }
 
                     ?>
-                    <iframe width="768" height="480" src="https://www.youtube.com/embed/GsjiwrVXwdY?list=PL4QohjtCEzJ4ei5BTK9ClnjorI1gFfgKq" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <br>
+                    <lable>Power for Parkinson's Wednesday Vocal Exercise - Live Streaming Day 196 </lable>
+                    <iframe width="480" height="250px" src="https://www.youtube.com/embed/xypdn9Hakno" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <br><br>
+                    <lable>Power for Parkinson’s Tuesday Move & Shout - Live Streaming Day 195</lable>
+                    <iframe width="480" height="250" src="https://www.youtube.com/embed/HY5w7sP-1mw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                 </div>
 
