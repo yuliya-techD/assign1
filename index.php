@@ -1,5 +1,7 @@
 <?php
 require_once "configGoogle.php";
+require_once "configDiscord.php";
+require "configGithub.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,35 +22,43 @@ require_once "configGoogle.php";
                 <div id="patient" class="panels">  
                     <div class="overlay"></div>
                     <div class = "button" >
-                        <a href="patient.php" class="twitter btn" style="text-align:center;
-                                                                         background-color: black;">
-                            <i class="fa fa-twitter fa-fw">
-                            </i> Login as a patient<br> with Twitter</a>
-
+                        <a href="dLogin.php" class="twitter btn" style="text-align:center;
+                                                                        background-color: black;">
+                            <i class="fa fa-discord fa-fw"></i>
+                            Login as a patient<br> with Discord</a>
                     </div>
                 </div>
+
+
                 <div id="physician" class="panels"> 
                     <div class="overlay"></div>
                     <div class = "button">
                         <a href="<?php echo $authUrl?>" class="google btn" style="text-align:center;
-                                                                                  background-color: black;"><i class="fa fa-google fa-fw">
+                                                                                  background-color: black;">
+                            <i class="fa fa-google fa-fw">
                             </i> 
                             Login as physician <br> with Gmail
                         </a>
-                    </div>                    
-
+                    </div>       
                 </div>
+
+
+
+
                 <div id="researcher" class="panels">
                     <div class="overlay"></div>
                     <div class = "button">
-                        <a href="researcher.php" class="linkedin btn" style="text-align:center;
-                                                                             background-color: black;">
-                            <i class="fa fa-linkedin fa-fw">
-                            </i> Login as researcher <br> with LinkedIn
+                        <a href="ghLogin.php" class="linkedin btn" style="text-align:center;
+                                                                          background-color: black;">
+                            <i class="fa fa-github fa-fw">
+                            </i> Login as researcher <br> with Github
                         </a>
                     </div>
-
                 </div>
+
+            </div>
+
+            <div>
 
             </div>
 

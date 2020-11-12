@@ -1,0 +1,58 @@
+.nav1{
+    background-color: aqua;
+}
+.profile-menu{  
+    width: 100%;
+    padding-left: 50%;
+    font-size: 24px;
+}
+
+.profile-menu ul, .profile-menu li{
+    width:100%;
+    color:darkgrey;
+    display: inline;
+    margin-right: 40px;
+}
+.profile-menu li:hover{
+    border-bottom: 2px solid darkgrey;
+}
+li.active{
+    border-bottom: 2px solid darkgrey;
+}
+.tablinks{
+
+}
+.tabcontent{
+    width:70%;
+    margin:auto;
+    padding: 8vh 0px;
+}
+.tabcontent h3{
+    padding:5vh 0 0 0;
+}
+.tabcontent a{
+    color:cornflowerblue;
+    text-decoration: none;
+}
+.first-active{
+    border-bottom: 2px solid darkred;
+}
+.first{
+    display: none;
+}
+
+.test-results{
+    color:darkgrey;
+    width:50%;
+    font-size:22px;
+    height: 130px;
+     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2) inset, 0 2px 2px 0 rgba(0, 0, 0, 0.1)inset;
+    padding-left: 15px;
+    overflow-y: scroll;
+}
+.test-session{
+    margin: 50px;
+    padding:15px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);
+}
+

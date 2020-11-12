@@ -5,7 +5,15 @@ body {
 * {
     box-sizing: border-box;
 }
-
+a{
+    text-decoration: none;
+}
+.nav{
+    float:right;
+    width:500px;
+    text-align: right;
+    border:1px solid black;
+}
 /* style the container */
 .container {
     position: relative;
@@ -90,4 +98,15 @@ body {
 .btn:hover {
     opacity: 1;
 }
-
+.video-div{
+    width: 80%;
+}
+.video-o {
+    width:500px;
+    margin:10px;
+    background-color: black;
+}
+.active, .clicked{
+    width:95%;
+    height:80vh;
+}

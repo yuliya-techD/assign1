@@ -21,7 +21,6 @@ $data_files = array("data/data1.csv","data/data2.csv","data/data3.csv","data/dat
 if (mysqli_connect_error()) {
     die('Connect Error ('.mysqli_connect_errno().') '.mysqli_connect_error());
 }
-echo 'Welcome. Connected successfully.<br>';
 
 //setting the update for the user emails
 function updateEmails($email){
